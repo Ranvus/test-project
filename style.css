@@ -1,0 +1,140 @@
+#app {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: #f1f1f1;
+  box-shadow: 2px 2px 20px 1px;
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  width: 800px;
+  min-height: 385px;
+}
+
+.wrapper label {
+  cursor: pointer;
+  float: left;
+  margin-right: 5px;
+  display: block;
+  padding: 10px 40px;
+  background-color: #ecf0f1;
+}
+.wrapper .input {
+  display: none;
+}
+.wrapper input:checked + label {
+  background-color: #e74c3c;
+  color: #fefefe;
+}
+.wrapper input[id="tab-1"]:checked ~ .content .tab-1, .wrapper input[id="tab-2"]:checked ~ .content .tab-2, .wrapper input[id="tab-3"]:checked ~ .content .tab-3 {
+  display: block;
+}
+.wrapper .content {
+  clear: both;
+  position: relative;
+}
+
+.wrapper article {
+  width: 87.5%;
+  padding: 20px 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  display: none;
+  min-height: 300px;
+  border-top: 5px solid #e74c3c;
+}
+
+button,
+button:active,
+button:hover{
+  outline: 0
+}
+
+.open{
+  background-color: teal;
+  border: 0;
+  border-radius: 50px;
+  width: 250px;
+  height: 100px;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.close{
+  background-color: teal;
+  border: 0;
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 150px;
+  margin-top: 4px;
+}
+
+.container{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper{
+  background-color: #fff;
+  border-radius: 10px;
+  width: 30%;
+}
+
+.url-img{
+  width: 80px;
+  padding-right: 20px;
+  margin-top: 30px;
+}
+
+.enter-img{
+  width: 150px;
+  margin-top: 30px;
+}
+
+.border{
+  border: 1px solid #111;
+}
+
+.fade-enter-active, .fade-leave-active{
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter, .fade-leave-to{
+  opacity: 0;
+}

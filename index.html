@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+  <button @click="modalAction()" class="open">Click</button>
+
+  <transition name=fade>
+    <div v-if="modal" class="container">
+      <div class="wrapper">
+        <input class="input" type="radio" name="tab" id="tab-1" checked>
+            <label for="tab-1">Tab-1</label>
+            <input class="input" type="radio" name="tab" id="tab-2">
+            <label for="tab-2">Tab-2</label>
+            <input class="input" type="radio" name="tab" id="tab-3">
+            <label for="tab-3">Tab-3</label>    
+            <button @click="modalAction()" class="close">x</button>
+            
+            <div class="content">
+                <article class="tab-1">
+                  <input type="file" id="files" name="files[]" multiple />
+                  <output id="list"></output>
+                </article>
+                <article class="tab-2">
+                    <div id="url">
+                      <form>
+                        <input type="text" placeholder="Просто введи сюда url" v-model="img">
+                      </form>
+                      <img class="enter-img" :src="img" alt="">
+                    </div>
+                </article>
+                <article class="tab-3">
+                    <img class="url-img" v-bind:class="{ border: isActive }" v-for="(url, index) in urls" @click="getIndex(index)" :src="url.message" alt="">
+                    <div style="margin-top: 20px">{{currentUrl}}</div>
+                </article>
+            </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+  
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
